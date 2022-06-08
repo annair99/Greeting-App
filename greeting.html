@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting</title>
+</head>
+<body>
+    <h1>Hello! What is your name?</h1>
+    <input id="inputName"> <br> <br> <br> <br>
+    <button onclick="greetingFunc()"> Submit </button>
+    <h1 id = "outputGreeting"> </h1>
+
+    <style>
+        body {background-color: darkkhaki; text-align: center; color: floralwhite;}
+    </style>
+    
+    <script>
+        function greetingFunc(){
+            //document indicates that it's from the same file
+            let currentTime = new Date();
+            let inputName = document.querySelector("#inputName");
+            let outputGreeting = document.querySelector("#outputGreeting");
+            //innerHtml returns all text, including html tags, that is contained by an element
+            if (currentTime.getHours() < 12) {
+                outputGreeting.innerHTML = "Good Morning, " + inputName.value;
+                document.body.background  = "https://wallpapercave.com/wp/wp8227989.jpg"
+            } else if (currentTime.getHours() < 18) {
+                outputGreeting.innerHTML = "Good Afternoon, " + inputName.value;
+                document.body.background = "https://wallpapercave.com/wp/wp2214656.jpg"
+            } else {
+                outputGreeting.innerHTML = "Good Evening, " + inputName.value;
+                document.body.background  = "https://wallpapercave.com/wp/wp3113563.jpg"
+            }
+        }
+    </script>
+</body>
+</html>
